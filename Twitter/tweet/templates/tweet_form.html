@@ -1,0 +1,209 @@
+{% extends "layout.html"%}
+
+{% block title %} My tweets {% endblock %}
+
+{% block content %}
+{% comment %} <h1 class ='text-center mt-4'>Welcome to my messaging app</h1>
+
+<h2>
+  {% if form.instance.pk %}
+  Edit Tweet
+  {% else %} 
+  Create tweet 
+  {% endif %}
+  <form method="post" enctype="multipart/form-data" class ="form">
+    {% csrf_token %}                                                  
+    {{form.as_p}}
+    <button class="btn btn-warning" type ="Submit">Submit</button>
+  </form>
+  <a href ="{% url 'tweet_list' %}">Back to tweet list</a>
+</h2>
+
+
+{% endblock %} {% endcomment %}
+
+
+
+
+ {% comment %} <div class="container mt-5 d-flex justify-content-center">
+  <div class="card shadow p-4" style="width: 100%; max-width: 600px; border-radius: 12px; overflow: hidden;">
+    <h2 class="welcome-text mb-4">
+      {% if form.instance.pk %}
+      Edit your tweet
+      {% else %}
+      Create a tweet
+      {% endif %}
+    </h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="mb-3">
+        {{ form.as_p }}
+      </div>
+      <button class="btn btn-primary w-100 mt-3" type="submit" style="box-shadow: none; transition: all 0.3s ease;">Submit</button>
+      <a href="{% url 'tweet_list' %}" class="btn btn-outline-secondary w-100 mt-2" style="transition: all 0.3s ease;">Back to Tweet List</a>
+    </form>
+  </div>
+</div>
+
+
+<style>
+  .welcome-text {
+    font-size: 1.75rem;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #657786;
+    text-align: center;
+    
+  }
+  
+  .card img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .btn-primary:hover,
+  .btn-outline-secondary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+</style>  {% endcomment %}
+
+
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="glass-card shadow p-4 text-center">
+    <h2 class="welcome-text mb-4">
+      {% if form.instance.pk %}
+      Edit Your Tweet
+      {% else %}
+      Create a New Tweet
+      {% endif %}
+    </h2>
+    <form method="post" enctype="multipart/form-data" novalidate>
+      {% csrf_token %}
+      <div class="form-group mb-4">
+        <textarea name="text" class="form-control custom-input" rows="7" required>{{ form.instance.text.strip }}</textarea>
+      </div>
+      <div class="form-group d-flex align-items-center justify-content-between mb-4">
+        <div class="custom-file-wrapper" style="flex-grow: 1;">
+          <input type="file" name="photo" id="photo-upload" class="custom-file-input">
+          <span class="custom-file-label">Choose photo</span>
+        </div>
+      </div>
+      <button class="btn glass-button w-100 mt-3" type="submit">Submit</button>
+      <a href="{% url 'tweet_list' %}" class="btn glass-button-outline w-100 mt-2">Back to Tweet List</a>
+    </form>
+  </div>
+</div>
+
+<style>
+  .glass-card {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    backdrop-filter: blur(12px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 2rem;
+  }
+
+  .welcome-text {
+    font-size: 1.75rem;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    margin-bottom: 1.5rem;
+  }
+
+  .custom-input {
+    width: 100%;
+    padding: 0.75em;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(200, 200, 200, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    resize: none;
+  }
+
+  .custom-input:focus {
+    border-color: rgba(29, 161, 242, 0.8);
+    outline: none;
+  }
+
+  .custom-file-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .custom-file-input {
+    width: 100%;
+    height: 3rem;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .custom-file-label {
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(200, 200, 200, 0.6);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #555;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  .custom-file-label:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+    color: #1da1f2;
+  }
+
+  .glass-button {
+    background-color: rgba(29, 161, 242, 0.6);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 50px;
+    padding: 0.75em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .glass-button:hover {
+    background-color: rgba(29, 161, 242, 0.8);
+    box-shadow: 0 4px 15px rgba(29, 161, 242, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .glass-button-outline {
+    background-color: transparent;
+    border: 2px solid rgba(29, 161, 242, 0.6);
+    color: rgba(29, 161, 242, 0.6);
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 50px;
+    padding: 0.75em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .glass-button-outline:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+    color: rgba(29, 161, 242, 1);
+    border-color: rgba(29, 161, 242, 1);
+    transform: translateY(-1px);
+  }
+</style>
+
+
+{% endblock %}

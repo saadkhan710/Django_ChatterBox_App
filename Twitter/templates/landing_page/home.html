@@ -1,0 +1,313 @@
+{% extends "layout.html"%}
+
+{% block title %} Chatter Box | Connect with the World{% endblock %}
+
+{% block content %}
+
+{% comment %} <html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <style>
+    body {
+      background-color: #f7f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #14171a;
+    }
+
+    .hero-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #1da1f2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #657786;
+      margin: 15px 0;
+    }
+
+    .btn-primary {
+      background-color: #1da1f2;
+      border-color: #1da1f2;
+      border-radius: 999px;
+      padding: 0.75em 1.5em;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a91da;
+      border-color: #1a91da;
+    }
+
+    .features {
+      padding: 30px 20px;
+    }
+
+    .feature-card {
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      color: #1da1f2;
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .feature-description {
+      font-size: 0.95rem;
+      color: #657786;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" >Get started  😊</a>
+        
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <h1 class="hero-title">Welcome to Chatter Box</h1>
+      <p class="hero-subtitle">Connect, Share, and Explore with the World.</p>
+      <a href="{% url 'register' %}" class="btn btn-primary">Get Started</a>
+    </section>
+
+    <section class="features container my-5">
+      <div class="row gap-4 justify-content-center">
+        <div class="col-md-3 feature-card">
+          <div class="feature-icon">💬</div>
+          <h4 class="feature-title">Real-time Chat</h4>
+          <p class="feature-description">Engage in seamless conversations with your friends and colleagues.</p>
+        </div>
+        <div class="col-md-3 feature-card">
+          <div class="feature-icon">🌍</div>
+          <h4 class="feature-title">Global Connection</h4>
+          <p class="feature-description">Stay connected with people from around the globe.</p>
+        </div>
+        <div class="col-md-3 feature-card">
+          <div class="feature-icon">✨</div>
+          <h4 class="feature-title">Trending Topics</h4>
+          <p class="feature-description">Discover and join discussions on the latest trends.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-aU6uDNDcCZKiA7IDkgt7YB6brJSkSWXpkaS6UiKFdZbj+M3qEuZp6IhZZ8CB5MZ3" crossorigin="anonymous"></script>
+</body>
+</html>  {% endcomment %}
+
+
+
+
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <style>
+    body {
+      background-color: #f7f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #14171a;
+    }
+
+    .hero-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #1da1f2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #657786;
+      margin: 15px 0;
+    }
+
+    .btn-primary {
+      background-color: #1da1f2;
+      border-color: #1da1f2;
+      border-radius: 999px;
+      padding: 0.75em 1.5em;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a91da;
+      border-color: #1a91da;
+    }
+
+    .features {
+      padding: 30px 20px;
+    }
+
+    .feature-card {
+      perspective: 750px; /* Enables 3D space for flipping */
+      position: relative;
+      width: 280px; /* Maintain responsiveness */
+      height: 200px; /* Fixed height for uniformity */
+    }
+
+    .flip-card-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .feature-card:hover .flip-card-inner {
+      transform: rotateY(180deg); /* Rotates the card on hover */
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .flip-card-front {
+      background-color: #ffffff; /* Front card color */
+      text-align: center;
+    }
+
+    .flip-card-back {
+      background-color: #1da1f2; /* Back card color */
+      color: white;
+      transform: rotateY(180deg);
+      text-align: center;
+
+    
+    }
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+    
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand">Get started 😊</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <h1 class="hero-title">Welcome to Chatter Box</h1>
+      <p class="hero-subtitle">Connect, Share, and Explore with the World.</p>
+      <a href="{% url 'register' %}" class="btn btn-primary">Get Started</a>
+    </section>
+
+    <section class="features container my-5">
+      <div class="row gap-4 justify-content-center">
+        <!-- Real-time Chat -->
+        <div class="col-md-3 feature-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="feature-icon">💬</div>
+              <h4 class="feature-title">Real-time Chat</h4>
+             
+            </div>
+            <div class="flip-card-back">
+              <p>Connect with friends instantly through secure chats!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Global Connection -->
+        <div class="col-md-3 feature-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+             
+              <h4 class="feature-title">🌍Global Connection</h4>
+              
+            </div>
+            <div class="flip-card-back">
+              <p>Build a worldwide network of connections effortlessly.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trending Topics -->
+        <div class="col-md-3 feature-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="feature-icon">✨</div>
+              <h4 class="feature-title">Trending Topics</h4>
+            
+            </div>
+            <div class="flip-card-back">
+              <p>Stay informed and explore trending conversations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-aU6uDNDcCZKiA7IDkgt7YB6brJSkSWXpkaS6UiKFdZbj+M3qEuZp6IhZZ8CB5MZ3" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+{% endblock %}
