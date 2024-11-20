@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-mgur+)k&_l!1$h++n$)r!uo2mmx+r*$tp%li92#*7rth2j)6j-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-chatterbox-app.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
