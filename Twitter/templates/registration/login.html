@@ -3,22 +3,20 @@
 
 
 {% block content %}
-{% comment %} <h2>Login form</h2>
 
-<form method="post">
-  {% csrf_token %}
-  {{form.as_p}}
-  <button class="btn btn-primary">submit</button>
-
-
-</form>
-<p> Don't have an account? <a href="{% url "register" %}">Register here</a></p> {% endcomment %}
 
 
 <div class="login-container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
   <div class="glass-card shadow p-4 text-center">
     <h2 class="welcome-text mb-4">Welcome Back!</h2>
     <p class="subtext">Log in to your account and connect with the world.</p>
+
+    {% if form.errors %}
+      <div class="alert alert-danger" role="alert">
+        Invalid username or password. Please try again.
+      </div>
+    {% endif %}
+    
     <form method="post" novalidate>
       {% csrf_token %}
       <div class="form-group">
