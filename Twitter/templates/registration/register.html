@@ -1,19 +1,6 @@
 {% extends "layout.html" %}
 
 
-{% comment %} 
-{% block content %}
-<h2>Register form</h2>
-
-<form method="post">
-  {% csrf_token %}
-  {{form.as_p}}
-  <button class="btn btn-primary">Register</button>
-
-
-</form> {% endcomment %}
-
-
 {% block title %}Register - Chatter Box{% endblock %}
 
 {% block content %}
@@ -21,6 +8,18 @@
   <div class="glass-card shadow p-4 text-center">
     <h2 class="welcome-text mb-4">Join Us!</h2>
     <p class="subtext">Create your account to connect with the world.</p>
+
+    <!-- Alert Messages for Form Errors -->
+    {% if form.errors %}
+      <div class="alert alert-danger" role="alert">
+        {% for field, errors in form.errors.items %}
+          {% for error in errors %}
+            <p>{{ error }}</p>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    
     <form method="post" novalidate>
       {% csrf_token %}
       <div class="form-group">
@@ -124,6 +123,20 @@
     min-height: 100vh;
    
   }
+
+  /* Alert Styling */
+  .alert {
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
 </style>
 
 {% endblock %}
