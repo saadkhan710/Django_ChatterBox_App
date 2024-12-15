@@ -7,7 +7,7 @@ Chatter Box is a dynamic and interactive messaging application built with Django
 # Features
 
 User Registration & Login:
-Users can register for an account and securely log in using Django's built-in authentication system, which ensures data security and effective user session management.
+Users can register for an account and securely log in using Django's built-in authentication system. The application provides real-time alert messages during login attempts, ensuring users receive clear feedback, such as success confirmation or errors like incorrect credentials. This enhances user understanding and simplifies app navigation.
 
 Tweet Creation:  
 Users can post their thoughts or ideas and have the option to attach a photo. Each tweet is associated with the user who created it.
@@ -82,6 +82,13 @@ python manage.py runserver
 <img width="1280" alt="Chatter_Box_1" src="https://github.com/user-attachments/assets/53dfade7-30de-4da4-9de0-9238b2646923" />
 
 <img width="1280" alt="Chatter_Box_3" src="https://github.com/user-attachments/assets/dc74afa1-9686-4f19-aaa6-aeeeffaa5bc4" />
+
+<img width="1280" alt="Chatter_Box_4" src="https://github.com/user-attachments/assets/8da1ef4b-d62f-45a5-949c-60215ef663ce" />
+
+<img width="1280" alt="Chatter_Box_5" src="https://github.com/user-attachments/assets/5a46a002-3d92-4d3c-8ef2-8a22c8fea715" />
+
+<img width="1280" alt="Chatter_Box_6" src="https://github.com/user-attachments/assets/cf8931ca-d623-4a4f-a851-69b474dab025" />
+
 
 
 
