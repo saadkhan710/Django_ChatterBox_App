@@ -48,6 +48,38 @@ Project link :  https://django-chatterbox-app.onrender.com
 
 <img width="235" alt="Screenshot 2024-12-15 192623" src="https://github.com/user-attachments/assets/822b8211-447e-419e-95ca-af64fab3abd6" />
 
+# Technologies Used
+
+Backend: Django Framework
+Frontend: Bootstrap 5, HTML5, CSS3
+Database: SQLite (default Django database)
+Authentication: Django’s built-in authentication system
+
+# Installation & Setup
+
+Clone the Repository:
+
+git clone https://github.com/your-username/chatter-box.git
+cd Twitter
+Install Dependencies: Create a virtual environment and install the required packages:
+
+
+python -m venv .venv
+On Windows use .\.venv\Scripts\activate
+pip install -r requirements.txt
+
+Apply Migrations:
+
+python manage.py makemigrations
+python manage.py migrate
+
+Run the Development Server:
+
+python manage.py runserver
+
+
+
+
 
 
 
