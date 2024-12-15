@@ -77,8 +77,11 @@ Run the Development Server:
 
 python manage.py runserver
 
+<img width="1274" alt="Chatter_Box_2" src="https://github.com/user-attachments/assets/fc1c2e6b-6763-4043-961c-c6662de4fd5a" />
 
+<img width="1280" alt="Chatter_Box_1" src="https://github.com/user-attachments/assets/53dfade7-30de-4da4-9de0-9238b2646923" />
 
+<img width="1280" alt="Chatter_Box_3" src="https://github.com/user-attachments/assets/dc74afa1-9686-4f19-aaa6-aeeeffaa5bc4" />
 
 
 
